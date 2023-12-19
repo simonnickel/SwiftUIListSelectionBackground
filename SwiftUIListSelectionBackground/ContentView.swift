@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Observation
+
+@Observable class SelectionState {
+	var selectedItems: [ListItem] = []
+}
 
 struct ContentView: View {
 	
+	let selectionState = SelectionState()
 	
     var body: some View {
 		
@@ -16,42 +22,50 @@ struct ContentView: View {
 			
 			ListView()
 				.navigationTitle("List")
+				.navigationDestination(for: ListItem.self) { item in
+					ListView()
+						.navigationTitle(item.title)
+						.onAppear {
+							selectionState.selectedItems.append(item)
+						}
+						.onDisappear {
+							selectionState.selectedItems.removeAll(where: { $0 == item })
+						}
+				}
 			
 		}
+		.environment(selectionState)
 
     }
+	
+}
+
+struct ListItem: Identifiable, Hashable {
+	let id: UUID = UUID()
+	let title: String
 }
 
 struct ListView: View {
 	
-	@State var selected: Int? = nil
+	@Environment(SelectionState.self) private var selectionState
+	
+	private let items: [ListItem] = {
+		(0..<10).map({ ListItem(title: "Row \($0)") })
+	}()
 	
 	var body: some View {
 			
 		List {
-			ForEach(0..<10) { row in
-				NavigationLink(value: row) {
-					Text("Row \(row)")
+			ForEach(items, id: \.id) { item in
+				NavigationLink(value: item) {
+					Text(item.title)
 				}
-				.if(selected == row) { view in
+				.if(selectionState.selectedItems.contains(item)) { view in
 					view.listRowBackground(
 						Color.yellow
 					)
 				}
 			}
-		}
-		// TODO: Same Destination type on each instance of ListView.
-		// > A navigationDestination for “Swift.Int” was declared earlier on the stack. Only the destination declared closest to the root view of the stack will be used.
-		// Needs either a unique type for each List or unique List items and a shared array of selected items.
-		.navigationDestination(for: Int.self) { row in
-			ListView()
-				.navigationTitle("Row \(row)")
-				.onAppear {
-					selected = row
-				}
-				.onDisappear {
-					selected = nil
-				}
 		}
 
 	}
