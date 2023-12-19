@@ -17,4 +17,5 @@ A List of NavigationLinks in a NavigationStack. The expected behaviour is to hig
 ## Related Feedback Tickets
 
 FB12515251 - .listRowBackground should have a value for when its highlighted.
+
 FB13091169 - A List of NavigationLinks should be able to define the selected background color
