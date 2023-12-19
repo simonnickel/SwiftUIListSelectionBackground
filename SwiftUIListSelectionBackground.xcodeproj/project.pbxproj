@@ -11,6 +11,7 @@
 		5A8FD8722B319FA2007E9A18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FD8712B319FA2007E9A18 /* ContentView.swift */; };
 		5A8FD8742B319FA3007E9A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8FD8732B319FA3007E9A18 /* Assets.xcassets */; };
 		5A8FD8782B319FA3007E9A18 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8FD8772B319FA3007E9A18 /* Preview Assets.xcassets */; };
+		5A8FD8832B31BE2B007E9A18 /* ContentView-Naive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FD8812B31BE06007E9A18 /* ContentView-Naive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		5A8FD8752B319FA3007E9A18 /* SwiftUIListSelectionBackground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIListSelectionBackground.entitlements; sourceTree = "<group>"; };
 		5A8FD8772B319FA3007E9A18 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5A8FD87E2B31B3B1007E9A18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5A8FD8812B31BE06007E9A18 /* ContentView-Naive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-Naive.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				5A8FD86F2B319FA2007E9A18 /* SwiftUIListSelectionBackgroundApp.swift */,
 				5A8FD8712B319FA2007E9A18 /* ContentView.swift */,
+				5A8FD8812B31BE06007E9A18 /* ContentView-Naive.swift */,
 				5A8FD8732B319FA3007E9A18 /* Assets.xcassets */,
 				5A8FD8752B319FA3007E9A18 /* SwiftUIListSelectionBackground.entitlements */,
 				5A8FD8762B319FA3007E9A18 /* Preview Content */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8FD8722B319FA2007E9A18 /* ContentView.swift in Sources */,
+				5A8FD8832B31BE2B007E9A18 /* ContentView-Naive.swift in Sources */,
 				5A8FD8702B319FA2007E9A18 /* SwiftUIListSelectionBackgroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

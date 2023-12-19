@@ -11,7 +11,7 @@ A List of NavigationLinks in a NavigationStack. The expected behaviour is to hig
 ## Obstacles
 
  - List selection binding does not work together with NavigationLink.
- - The closest NavigationDestination to the root is used. This means you can't overwrite the destination for each Entity of your View.
+ - The closest NavigationDestination to the root is used. This means you can't overwrite the destination for each Entity of your View (see ContentView-Naive.swift).
 
 
 ## Related Feedback Tickets
